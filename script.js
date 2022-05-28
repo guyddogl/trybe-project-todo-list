@@ -1,6 +1,7 @@
 const inputText = document.getElementById('texto-tarefa');
 const buttonAdd = document.getElementById('criar-tarefa');
 const buttonClear = document.getElementById('apaga-tudo');
+const buttonSaveList = document.getElementById('salvar-tarefas');
 const buttonCompleted = document.getElementById('remover-finalizados');
 const toDoList = document.getElementById('lista-tarefas');
 const toDoListItems = document.getElementById('lista-tarefas').children;
@@ -50,3 +51,18 @@ function deleteCompleted() {
 }
 
 buttonCompleted.addEventListener('click', deleteCompleted);
+
+// Requisito 12
+function saveList() {
+  const itemsToSave = toDoList.innerHTML;
+  localStorage.setItem('savedList', itemsToSave);
+}
+
+function recoverList() {
+  toDoList.innerHTML = localStorage.getItem('savedList');
+  return toDoList;
+}
+
+buttonSaveList.addEventListener('click', saveList);
+
+window.onload = recoverList();
