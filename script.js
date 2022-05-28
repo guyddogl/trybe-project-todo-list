@@ -23,6 +23,7 @@ function addToList() {
   const inputItem = inputText.value;
   const newItem = document.createElement('li');
   newItem.innerText = inputItem;
+  newItem.classList.add('list-group-item');
   newItem.addEventListener('click', changeBackground);
   newItem.addEventListener('dblclick', taskCompleted); // Requisito 9
   toDoList.appendChild(newItem);

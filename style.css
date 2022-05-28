@@ -1,14 +1,11 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 .itemSelected {
   background-color: gray;
 }
 
 .completed {
   text-decoration: line-through solid black;
+}
+
+.btn {
+  width: 130px;
 }
