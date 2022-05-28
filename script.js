@@ -12,12 +12,19 @@ function changeBackground(event) {
   itemSelected.classList.add('itemSelected');
 }
 
+// Requisito 9
+function taskCompleted(event) {
+  const itemDbcliked = event.target;
+  itemDbcliked.classList.toggle('completed');
+}
+
 // Requisito 5 e 6
 function addToList() {
   const inputItem = inputText.value;
   const newItem = document.createElement('li');
   newItem.innerText = inputItem;
   newItem.addEventListener('click', changeBackground);
+  newItem.addEventListener('dblclick', taskCompleted); // Requisito 9
   toDoList.appendChild(newItem);
   inputText.value = '';
 }
