@@ -1,5 +1,6 @@
 const inputText = document.getElementById('texto-tarefa');
 const buttonAdd = document.getElementById('criar-tarefa');
+const buttonClear = document.getElementById('apaga-tudo');
 const toDoList = document.getElementById('lista-tarefas');
 const toDoListItems = document.getElementById('lista-tarefas').children;
 
@@ -23,7 +24,7 @@ function addToList() {
   const inputItem = inputText.value;
   const newItem = document.createElement('li');
   newItem.innerText = inputItem;
-  newItem.classList.add('list-group-item');
+  newItem.classList.add('list-group-item', 'cursorPointer');
   newItem.addEventListener('click', changeBackground);
   newItem.addEventListener('dblclick', taskCompleted); // Requisito 9
   toDoList.appendChild(newItem);
@@ -31,3 +32,9 @@ function addToList() {
 }
 
 buttonAdd.addEventListener('click', addToList);
+
+function clearList() {
+  toDoList.innerHTML = '';
+}
+
+buttonClear.addEventListener('click', clearList);

@@ -9,3 +9,7 @@
 .btn {
   width: 130px;
 }
+
+.cursorPointer {
+  cursor: pointer;
+}
