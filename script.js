@@ -1,6 +1,7 @@
 const inputText = document.getElementById('texto-tarefa');
 const buttonAdd = document.getElementById('criar-tarefa');
 const buttonClear = document.getElementById('apaga-tudo');
+const buttonCompleted = document.getElementById('remover-finalizados');
 const toDoList = document.getElementById('lista-tarefas');
 const toDoListItems = document.getElementById('lista-tarefas').children;
 
@@ -33,8 +34,19 @@ function addToList() {
 
 buttonAdd.addEventListener('click', addToList);
 
+//Requisito 10
 function clearList() {
   toDoList.innerHTML = '';
 }
 
 buttonClear.addEventListener('click', clearList);
+
+// Requisito 11
+function deleteCompleted() {
+  const tasksCompleted = document.getElementsByClassName('completed');
+  while(tasksCompleted.length > 0){
+    tasksCompleted[0].parentNode.removeChild(tasksCompleted[0]);
+  }
+}
+
+buttonCompleted.addEventListener('click', deleteCompleted);
