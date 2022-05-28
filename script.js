@@ -3,6 +3,7 @@ const buttonAdd = document.getElementById('criar-tarefa');
 const buttonClear = document.getElementById('apaga-tudo');
 const buttonSaveList = document.getElementById('salvar-tarefas');
 const buttonCompleted = document.getElementById('remover-finalizados');
+const buttonDelete = document.getElementById('remover-selecionado');
 const toDoList = document.getElementById('lista-tarefas');
 const toDoListItems = document.getElementById('lista-tarefas').children;
 
@@ -60,9 +61,21 @@ function saveList() {
 
 function recoverList() {
   toDoList.innerHTML = localStorage.getItem('savedList');
+  for (let index = 0; index < toDoListItems.length; index += 1) {
+    toDoListItems[index].addEventListener('click', changeBackground);
+    toDoListItems[index].addEventListener('dblclick', taskCompleted);
+  }
   return toDoList;
 }
 
 buttonSaveList.addEventListener('click', saveList);
+
+// Requisito 14
+function deleteSelected() {
+  const deleteTask = document.getElementsByClassName('itemSelected');
+  deleteTask[0].parentNode.removeChild(deleteTask[0]);
+}
+
+buttonDelete.addEventListener('click', deleteSelected);
 
 window.onload = recoverList();
