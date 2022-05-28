@@ -4,3 +4,7 @@
   padding: 0;
   border: 0;
 }
+
+.itemSelected {
+  background-color: gray;
+}
