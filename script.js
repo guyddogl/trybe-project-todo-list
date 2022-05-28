@@ -1,9 +1,13 @@
 const inputText = document.getElementById('texto-tarefa');
 const buttonAdd = document.getElementById('criar-tarefa');
 const toDoList = document.getElementById('lista-tarefas');
+const toDoListItems = document.getElementById('lista-tarefas').children;
 
 // Requisito 7
 function changeBackground(event) {
+  for (let index = 0; index < toDoListItems.length; index +=1) { // Requisito 8
+    toDoListItems[index].classList.remove('itemSelected');
+  }
   const itemSelected = event.target;
   itemSelected.classList.add('itemSelected');
 }
