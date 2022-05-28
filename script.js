@@ -39,6 +39,7 @@ buttonAdd.addEventListener('click', addToList);
 // Requisito 10
 function clearList() {
   toDoList.innerHTML = '';
+  localStorage.setItem('savedList', toDoList.innerHTML);
 }
 
 buttonClear.addEventListener('click', clearList);
