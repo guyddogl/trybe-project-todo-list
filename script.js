@@ -34,7 +34,7 @@ function addToList() {
 
 buttonAdd.addEventListener('click', addToList);
 
-//Requisito 10
+// Requisito 10
 function clearList() {
   toDoList.innerHTML = '';
 }
@@ -44,7 +44,7 @@ buttonClear.addEventListener('click', clearList);
 // Requisito 11
 function deleteCompleted() {
   const tasksCompleted = document.getElementsByClassName('completed');
-  while(tasksCompleted.length > 0){
+  while (tasksCompleted.length > 0) {
     tasksCompleted[0].parentNode.removeChild(tasksCompleted[0]);
   }
 }
