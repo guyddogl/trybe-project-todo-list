@@ -4,6 +4,8 @@ const buttonClear = document.getElementById('apaga-tudo');
 const buttonSaveList = document.getElementById('salvar-tarefas');
 const buttonCompleted = document.getElementById('remover-finalizados');
 const buttonDelete = document.getElementById('remover-selecionado');
+const buttonMoveUp = document.getElementById('mover-cima');
+const buttonMoveDown = document.getElementById('mover-baixo');
 const toDoList = document.getElementById('lista-tarefas');
 const toDoListItems = document.getElementById('lista-tarefas').children;
 
@@ -11,12 +13,12 @@ const toDoListItems = document.getElementById('lista-tarefas').children;
 function changeBackground(event) {
   const itemSelected = event.target;
   if (itemSelected.classList.contains('itemSelected')) {
-    itemSelected.classList.toggle('itemSelected');
+    itemSelected.classList.add('itemSelected'); // toggle
   } else {
     for (let index = 0; index < toDoListItems.length; index += 1) { // Requisito 8
       toDoListItems[index].classList.remove('itemSelected');
     }
-    itemSelected.classList.toggle('itemSelected');
+    itemSelected.classList.add('itemSelected'); // toggle
   }
 }
 
@@ -91,6 +93,31 @@ function recoverList() {
 }
 
 buttonSaveList.addEventListener('click', saveList);
+
+// Requisito 13
+function moveUp() {
+  const getItemSelected = document.querySelector('.itemSelected');
+  if (getItemSelected && getItemSelected.previousElementSibling) {
+    const getParent = getItemSelected.parentNode;
+    getParent.insertBefore(getItemSelected, getItemSelected.previousElementSibling);
+  } else {
+    console.log('top da lista');
+  }
+}
+
+buttonMoveUp.addEventListener('click', moveUp);
+
+function moveDown() {
+  const getItemSelected = document.querySelector('.itemSelected');
+  if (getItemSelected && getItemSelected.nextElementSibling) {
+    const getParent = getItemSelected.parentNode;
+    getParent.insertBefore(getItemSelected, getItemSelected.nextElementSibling.nextElementSibling);
+  } else {
+    console.log('fim da lista');
+  }
+}
+
+buttonMoveDown.addEventListener('click', moveDown);
 
 // Requisito 14
 function deleteSelected() {
