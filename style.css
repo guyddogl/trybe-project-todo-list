@@ -4,7 +4,7 @@
 
 .completed {
   text-decoration: line-through solid black;
-  color: #28a745;
+  color: green;
 }
 
 .btnmedium {
@@ -16,7 +16,7 @@
 }
 
 .fa-check {
-  color: #28a745;
+  color: green;
 }
 
 .check {
