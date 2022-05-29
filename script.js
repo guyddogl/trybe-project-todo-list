@@ -9,11 +9,15 @@ const toDoListItems = document.getElementById('lista-tarefas').children;
 
 // Requisito 7
 function changeBackground(event) {
-  for (let index = 0; index < toDoListItems.length; index += 1) { // Requisito 8
-    toDoListItems[index].classList.remove('itemSelected');
-  }
   const itemSelected = event.target;
-  itemSelected.classList.add('itemSelected');
+  if (itemSelected.classList.contains('itemSelected')) {
+    itemSelected.classList.toggle('itemSelected');
+  } else {
+    for (let index = 0; index < toDoListItems.length; index += 1) { // Requisito 8
+      toDoListItems[index].classList.remove('itemSelected');
+    }
+    itemSelected.classList.toggle('itemSelected');
+  }  
 }
 
 // Requisito 9
@@ -27,6 +31,7 @@ function addToList() {
   const inputItem = inputText.value;
   const newItem = document.createElement('li');
   newItem.innerText = inputItem;
+  newItem.setAttribute('id', Date.now());
   newItem.classList.add('list-group-item', 'cursorPointer');
   newItem.addEventListener('click', changeBackground);
   newItem.addEventListener('dblclick', taskCompleted); // Requisito 9
