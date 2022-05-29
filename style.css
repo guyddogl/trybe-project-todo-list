@@ -4,6 +4,7 @@
 
 .completed {
   text-decoration: line-through solid black;
+  color: #28a745;
 }
 
 .btnmedium {
@@ -12,4 +13,12 @@
 
 .cursorPointer {
   cursor: pointer;
+}
+
+.fa-check {
+  color: #28a745;
+}
+
+.check {
+  display: none;
 }
