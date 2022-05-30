@@ -9,4 +9,4 @@ Links: <a href="https://guyddogl.github.io/trybe-project-todo-list/">Preview</a>
 ![JavaScript](https://img.shields.io/badge/-JavaScript-1b374b?style=for-the-badge&logo=javascript)&nbsp;
 <hr/>
 
-<img src="https://guyddogl.github.io/trybe-project-todo-list/imgs/todolist.gif" alt="Gif Preview" />
+<img src="https://guyddogl.github.io/trybe-project-todo-list/assets/img/todolist.gif" alt="Gif Preview" />
